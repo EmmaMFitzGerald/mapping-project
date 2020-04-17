@@ -1,0 +1,14 @@
+.map-page {
+    display: flex;
+}
+
+#map {
+    width: 75%;
+    height: 650px;
+}
+
+.data-window {
+    width: 25%;
+    height: 650px;
+    margin-left: 15px;
+}
