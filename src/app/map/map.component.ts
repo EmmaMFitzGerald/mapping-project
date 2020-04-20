@@ -25,11 +25,6 @@ export class MapComponent implements OnInit {
     center: [-98, 38]
     });
 
-    // map.addLayer({
-    //   'id': 'states',
-    //   'type': 'circle',
-    //   'source': 'state',
-
     // this.mapService.getCoronaData()
     //   .subscribe(res => this.data = res)
 
