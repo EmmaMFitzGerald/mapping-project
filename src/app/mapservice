@@ -1,41 +1,45 @@
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, forkJoin } from 'rxjs';
+import { map } from 'rxjs/operators';
 
+// @Injectable({
+//   providedIn: 'root'
+// })
 
 declare let mapboxgl:any;
 
-
 export class MapService {
+  http: any;
 
-  public map:any
-
-  setDateToFilter(numberDate){
-    console.log("numberDate", numberDate)
-    console.log(this.map)
-    this.map.setFilter('deaths', ['==', ['number', ['get', 'numberDate']], numberDate]);
+  setFilter(date){
+      console.log("in map service", date)
   }
   
   async ngOnInit(): Promise<any> {
+
+    this.http.get("../assets/corona-geojson.geojson")
+    .subscribe(data => { console.log(data)})
     
+
     mapboxgl.accessToken = 'pk.eyJ1IjoiZW1tYW1maXR6Z2VyYWxkIiwiYSI6ImNrOTA5bmFiOTIxcXAzZnFxdWt1OXJ6d3YifQ.fOuVi7c-DSQIGwXyrqb8ZQ';
-    this.map = new mapboxgl.Map({
+    const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
     zoom: 3,
     center: [-98, 38]
     });
 
-   
+    map.on('style.load', function() {
 
-    this.map.on('style.load', () => {
-
-      this.map.addLayer({
+      map.addLayer({
         id: 'coronaData',
         type: 'circle',
         source: {
           type: 'geojson',
-          data: "../assets/corona-geojson.geojson"
+          data: "../assets/corona-geojson.geojson" // replace this with the url of your own geojson
         },
-        filter: ['==', ['number', ['get', 'numberDate']], 18282],
+        filter: ['==', ['string', ['get', 'date']], "2020-04-01"],
         paint: {
         'circle-color': [
           'step',
