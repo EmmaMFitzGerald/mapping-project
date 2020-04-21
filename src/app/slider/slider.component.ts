@@ -7,14 +7,15 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css'],
-  providers: [MapService]
 })
 export class SliderComponent implements OnInit {
 
   @ViewChild('dateSelector') dateSelector: ElementRef;
 
   
-  constructor(private mapService: MapService) { }
+  constructor(private mapService: MapService) {
+    debugger
+   }
 
   filterDate(){
     console.log("filtered")

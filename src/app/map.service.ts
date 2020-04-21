@@ -1,14 +1,16 @@
-import { HttpClient } from '@angular/common/http';
-
+import { Injectable } from '@angular/core';
 
 declare let mapboxgl:any;
 
-
+@Injectable({
+  providedIn: "root",
+})
 export class MapService {
 
   public map:any
 
   setDateToFilter(numberDate){
+    debugger
     console.log("numberDate", numberDate)
     console.log(this.map)
     this.map.setFilter('deaths', ['==', ['number', ['get', 'numberDate']], numberDate]);
@@ -23,8 +25,6 @@ export class MapService {
     zoom: 3,
     center: [-98, 38]
     });
-
-   
 
     this.map.on('style.load', () => {
 
