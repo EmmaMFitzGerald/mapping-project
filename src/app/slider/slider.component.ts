@@ -17,16 +17,16 @@ export class SliderComponent implements OnInit {
    }
 
   filterDate(){
-    console.log("filtered")
-
     const element = event.currentTarget as unknown as HTMLInputElement
     const date = element.value
-    console.log("date", date)
     this.mapService.setDateToFilter(date);
+    const formattedDate = new Date(((((parseInt(date)*1000)*60)*60)*24))
+    document.getElementById('date').innerHTML = formattedDate.toDateString()
   }
 
   ngOnInit() {
-    
+    const formattedDate = new Date(((((18283)*1000)*60)*60)*24)
+    document.getElementById('date').innerHTML = formattedDate.toDateString()
   }
 }
   
