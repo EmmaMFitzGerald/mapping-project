@@ -10,10 +10,7 @@ export class MapService {
   public map:any
 
   setDateToFilter(numberDate){
-    debugger
-    console.log("numberDate", numberDate)
-    console.log(this.map)
-    this.map.setFilter('deaths', ['==', ['number', ['get', 'numberDate']], numberDate]);
+    this.map.setFilter('coronaData', ['==', ['number', ['get', 'numberDate']], parseInt(numberDate)]);
   }
   
   async ngOnInit(): Promise<any> {

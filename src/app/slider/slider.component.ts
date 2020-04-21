@@ -14,7 +14,6 @@ export class SliderComponent implements OnInit {
 
   
   constructor(private mapService: MapService) {
-    debugger
    }
 
   filterDate(){

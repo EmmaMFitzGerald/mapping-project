@@ -7,7 +7,6 @@ import { async } from '@angular/core/testing';
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css'],
-  providers: [MapService]
 })
 export class MapComponent implements OnInit {
   
