@@ -1,3 +1,7 @@
+body {
+    font-family: 'Noto Serif', serif;
+}
+
 .map-page {
     display: flex;
 }
@@ -16,7 +20,7 @@
 .map-overlay-inner .caseLegend .bar {
     height: 10px;
     width: 90%;
-    background: linear-gradient(to right, #fca107, #7f3121);
+    background: linear-gradient(to right, #4d4dff,  #00001a);
     }
     
 .map-overlay-inner .deathLegend .bar {
@@ -27,4 +31,11 @@
 
 #slider {
     width: 90%;
+    height: 15px;
+    border-radius: 5px; 
+    margin-top: 10px;
+}
+
+#date {
+    margin-top: 30px;
 }
