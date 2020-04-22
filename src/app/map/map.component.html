@@ -1,6 +1,31 @@
-
-<div id='map'></div>
+<div class="map-page">
+    <div id='map'></div>
+    <div class="data-window">      
 <div class="map-overlay top">
-<div class="map-overlay-inner">
-</div>
+    <div class="map-overlay-inner">
+  </div>
+  <div class="map-overlay top">
+    <div class="map-overlay-inner">
+    <h2>Corona Virus Data</h2>
+    <h3>Cases:</h3>
+    <div class="map-overlay-inner">
+        <div id="caseLegend" class="caseLegend">
+        <div class="bar"></div>
+    </div>
+     </div>
+    <p id="caseDate"></p>
+    <label id="dateSelector"></label>
+    <input (change)="filterCaseDate()" id="slider" type="range" min="18283" max="18367" step="1" value="18283" />
+    </div>
+    <h3>Deaths:</h3>
+    <div class="map-overlay-inner">
+        <div id="deathLegend" class="deathLegend">
+        <div class="bar"></div>
+    </div>
+     </div>
+    <p id="deathDate"></p>
+    <label id="dateSelector"></label>
+    <input (change)="filterDeathDate()" id="slider" type="range" min="18283" max="18367" step="1" value="18283" />
+    </div>
+    </div>
 </div>

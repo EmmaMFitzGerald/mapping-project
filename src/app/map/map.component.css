@@ -12,3 +12,19 @@
     height: 650px;
     margin-left: 15px;
 }
+
+.map-overlay-inner .caseLegend .bar {
+    height: 10px;
+    width: 90%;
+    background: linear-gradient(to right, #fca107, #7f3121);
+    }
+    
+.map-overlay-inner .deathLegend .bar {
+        height: 10px;
+        width: 90%;
+        background: linear-gradient(to right, #FF0000, #880000);
+        }
+
+#slider {
+    width: 90%;
+}
